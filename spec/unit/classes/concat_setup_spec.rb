@@ -44,13 +44,5 @@ describe 'concat::setup', :type => :class do
         end
       end
     end
-
-  end # facts
-
-  context 'called from another module namespace' do
-    let(:facts) {{ :concat_basedir => '/foo' }}
-    it 'should fail' do
-      expect { should }.to raise_error(Puppet::Error, /Use of private class concat::setup/)
-    end
   end
 end

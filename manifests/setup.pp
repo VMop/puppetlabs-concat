@@ -10,10 +10,6 @@
 # It also copies out the concatfragments.sh file to ${concatdir}/bin
 #
 class concat::setup {
-  if $caller_module_name != $module_name {
-    fail("Use of private class ${name} by ${caller_module_name}")
-  }
-
   if $::concat_basedir {
     $concatdir = $::concat_basedir
   } else {
